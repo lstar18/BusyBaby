@@ -1,18 +1,14 @@
 {
   "devType1": {
-    "name": "Physical",
-    "id": "type1"
+    "name": "Physical"
   },
   "devType2": {
-    "name": "Cognitive",
-    "id": "type2"
+    "name": "Cognitive"
   },
   "devType3": {
-    "name": "Communication",
-    "id": "type3"
+    "name": "Communication"
   },
   "devType4": {
-    "name": "Social",
-    "id": "type4"
+    "name": "Social"
   }
 }
