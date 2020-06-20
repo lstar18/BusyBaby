@@ -1,0 +1,20 @@
+{
+  "child1": {
+    "name": "Simon",
+    "birthday": "July 3rd 2018",
+    "uid": "1234",
+    "id": "child1"
+  },
+  "child2": {
+    "name": "Lev",
+    "birthday": "July 3rd 2018",
+    "uid": "1234",
+    "id": "child2"
+  },
+  "child3": {
+    "name": "Asher",
+    "birthday": "August 10th 2018",
+    "uid": "5678",
+    "id": "child3"
+  }
+}
