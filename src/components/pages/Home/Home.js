@@ -1,16 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import childData from '../../../helpers/data/childData';
+import ChildCard from '../../shared/ChildCard/ChildCard';
 import './Home.scss';
+import authData from '../../../helpers/data/authData';
 
 class Home extends React.Component {
+  state = {
+    children: [],
+  }
+  
+  getChildren = () => {
+    const uid  = authData.getUid();
+    childData.getChildrenbyUid(uid)
+    .then((children) => this.setState({ children }))
+    .catch((err) => console.error('cannot get children', err));
+  }
+
+  componentDidMount() {
+    this.getChildren();
+  }
+
   render() {
-    const editChildLink = `/child/edit/12345`;
-    const singleChildLink = `/child/child1`;
+   const { children } = this.state;
+
+   const buildChildrenCards = children.map((child) => (
+     <ChildCard key={child.id} child={child} />
+   ))
     return (
       <div className="Home">
-        <h2>Home</h2>
-        <Link className="btn btn-dark" to={editChildLink}> <i className="fas fa-pencil-alt"></i> </Link>
-        <Link className="btn btn-success" to={singleChildLink}> <i className="fas fa-user-plus"></i> </Link>
+        <h1> Our BusyBaby Tracker </h1>
+        <div className="d-flex flex-wrap">
+          { buildChildrenCards }
+        </div>
       </div>
     );
   }
