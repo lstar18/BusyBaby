@@ -12,8 +12,8 @@ class ChildCard extends React.Component {
   
   render() {
     const { child } = this.props;
-    const editChildLink = `/child/edit/child1`;
-    const singleChildLink = '/child/child1'; 
+    const editChildLink = `/child/edit/${child.id}`;
+    const singleChildLink = `/child/${child.id}`; 
                 
 
     return (

@@ -24,7 +24,7 @@ class Home extends React.Component {
    const { children } = this.state;
 
    const buildChildrenCards = children.map((child) => (
-     <ChildCard key={child.id} child={child} />
+     <ChildCard key={child.id} child={child} children={children}/>
    ))
     return (
       <div className="Home">
