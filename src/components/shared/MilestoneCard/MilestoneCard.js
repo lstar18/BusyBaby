@@ -9,7 +9,8 @@ class MilestoneCard extends React.Component {
   }
   render() {
     const { milestone } = this.props;
-    const editMilestoneLink = `/milestone/edit/:12345`;
+
+    const editMilestoneLink = `/milestone/edit/12345`;
 
     return (
       <div className="MilestoneCard col-4">

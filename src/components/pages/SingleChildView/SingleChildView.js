@@ -22,13 +22,12 @@ class SingleChildView extends React.Component {
 
   render() {
     const { milestones } = this.state;
-
     const buildMilestoneCards = milestones.map((milestone) => (
       <MilestoneCard key={milestone.id} milestone={milestone} />
     ));
     return (
       <div className="SingleChildView">
-        <h1> Child 1 Milestones </h1>
+        <h2> Milestones Tracker </h2>
         <div className="d-flex flex-wrap">
           { buildMilestoneCards }
         </div>
