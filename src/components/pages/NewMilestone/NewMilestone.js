@@ -3,6 +3,7 @@ import './NewMilestone.scss';
 import milestoneData from '../../../helpers/data/milestoneData';
 import childData from '../../../helpers/data/childData';
 import authData from '../../../helpers/data/authData';
+import devTypeData from '../../../helpers/data/devTypeData';
 
 class NewMilestone extends React.Component {
   state = {
@@ -11,6 +12,7 @@ class NewMilestone extends React.Component {
       imageUrl: '',
       date: '',
       children: [],
+      devType: [],
     }
 
   titleChange = (e) => {
@@ -34,9 +36,10 @@ class NewMilestone extends React.Component {
     }
   componentDidMount() {
       const uid  = authData.getUid();
-      console.log('uid', uid);
       childData.getChildrenbyUid(uid)
       .then((children) => this.setState({ children }))
+      devTypeData.getDevTypes()
+      .then((devTypes) => this.setState({ devTypes }))
       .catch((err) => console.error('cannot get chidlren', err));
     }
   saveMilestone  = (e) => {
@@ -65,11 +68,15 @@ class NewMilestone extends React.Component {
       imageUrl,
       date,
       children,
+      devType,
     } = this.state;
+
     const buildChildDropdown = () => children.map((child) => <option value={child.id}>{child.name}</option>);
+    const buildDevTypeDropdown = () => devType.map((devType) => <option value={devType.id}>{devType.name}</option>);
 
     return (
-      <div className="NewMilestone col-12">
+      <div className="NewMilestone col-6 offset-3">
+        <h2> Add a New Milestone! </h2>
         <form>
           <div class="form-group">
             <label for="milestone-title">Title </label>
@@ -109,11 +116,18 @@ class NewMilestone extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <label for="milestone-dropdown-child">Select Child</label>
+            <select class="form-control" id="milestone-dropdown-child">
               {buildChildDropdown()}
             </select>
           </div>
+          <div class="form-group">
+            <label for="milestone-dropdown-devType">Select Developmental Type</label>
+            <select class="form-control" id="milestone-dropdown-devType">
+              {buildDevTypeDropdown()}
+            </select>
+          </div>
+         
           <button type="submit" class="btn btn-primary" onClick={this.saveMilestone}>Submit Milestone</button>
         </form>
       </div>
