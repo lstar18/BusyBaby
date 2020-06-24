@@ -19,4 +19,5 @@ const getMilestonesbyChildId = (childId) => new Promise((resolve, reject) => {
   .catch((err) => reject(err));
 })
 
-export default { getMilestonesbyChildId };
+const postMilestone = (newMilestone) => axios.post(`${baseUrl}/milestones.json`, newMilestone);
+export default { getMilestonesbyChildId, postMilestone };
