@@ -2,8 +2,8 @@
   "milestone1": {
     "title": "Simon's First Smile",
     "description": "I was making a silly face and Simon got the biggest smile on his face!",
-    "imageUrl": "",
-    "date": "12/25/2018",
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/05/11/32/baby-316215__340.jpg",
+    "date": "10/25/2018",
     "typeId": "devType4",
     "uid": "1234",
     "childId": "child1"
@@ -11,8 +11,8 @@
   "milestone2": {
     "title": "Simon's First Time Sitting Up",
     "description": "We positioned Sy in the tripod position to help support himself and put a toy in front of him.  When we let go, he stayed sitting up!",
-    "imageUrl": "",
-    "date": "",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTToyRaqGCEb3MG0n852E9yZPywavzrLc1NAzF6p6EEPy78eeVF&usqp=CAU",
+    "date": "12/25/2018",
     "typeId": "devType1",
     "uid": "1234",
     "childId": "child1"
@@ -20,8 +20,8 @@
   "milestone3": {
     "title": "Simon's First Picking Up Cheerio",
     "description": "We put Cheerios on Simon tray and he was used a pincher grasp to pick it up and put it in his mouth!",
-    "imageUrl": "",
-    "date": "",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlF8sNqhveX0a1XSXpXvnopxbuUDrlIkariSnUnssFLgm5cnqA&usqp=CAU",
+    "date": "1/25/2019",
     "typeId": "devType2",
     "uid": "1234",
     "childId": "child1"
@@ -29,8 +29,8 @@
   "milestone4": {
     "title": "Lev's First Smile",
     "description": "We were listening to a song where the animals made a funny noise and Lev got the biggest smile on his face!",
-    "imageUrl": "",
-    "date": "",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8rn99_ckMwt4aVuplHI3xLU6kqcGpfrAid6MvhMYCsXSScGJR&usqp=CAU",
+    "date": "11/01/2018",
     "typeId": "devType4",
     "uid": "1234",
     "childId": "child2"
@@ -38,8 +38,8 @@
   "milestone5": {
     "title": "Lev's First Time Sitting Up",
     "description": "We positioned Lev in the tripod position to help support himself and put a toy in front of him.  When we let go, he stayed sitting up!",
-    "imageUrl": "",
-    "date": "",
+    "imageUrl": "data:image/jpeg;base64,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",
+    "date": "1/03/2019",
     "typeId": "devType1",
     "uid": "1234",
     "childId": "child2"
@@ -47,8 +47,8 @@
   "milestone6": {
     "title": "Asher's First Time Saying Mama",
     "description": "I was walking out the door to go to work and Asher waved and said Mama!",
-    "imageUrl": "",
-    "date": "",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShxZKn1UG02BGhqfv0yqkT8rETo5IY-ES5cMW3gxvBPF8K-wCp&usqp=CAU",
+    "date": "05/18/2019",
     "typeId": "devType3",
     "uid": "5678",
     "childId": "child3"
