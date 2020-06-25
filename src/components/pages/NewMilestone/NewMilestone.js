@@ -3,6 +3,7 @@ import './NewMilestone.scss';
 import milestoneData from '../../../helpers/data/milestoneData';
 import childData from '../../../helpers/data/childData';
 import authData from '../../../helpers/data/authData';
+import devTypeData from '../../../helpers/data/devTypeData';
 
 class NewMilestone extends React.Component {
   state = {
@@ -11,6 +12,7 @@ class NewMilestone extends React.Component {
       imageUrl: '',
       date: '',
       children: [],
+      getDevTypes: [],
     }
 
   titleChange = (e) => {
@@ -32,12 +34,18 @@ class NewMilestone extends React.Component {
       e.preventDefault();
       this.setState({ date: e.target.value });
     }
+  // developmentChange =(e) => {
+  //   e.preventDefault();
+  //   this.setState({ selectedOption: e.target.value});
+  // }
   componentDidMount() {
       const uid  = authData.getUid();
-      console.log('uid', uid);
       childData.getChildrenbyUid(uid)
       .then((children) => this.setState({ children }))
       .catch((err) => console.error('cannot get chidlren', err));
+      devTypeData.getDevTypes()
+      .then((devTypes) => this.setState({ devTypes }))
+      .catch((err) => console.error('cannot get devType', err));
     }
   saveMilestone  = (e) => {
     const {  
@@ -45,6 +53,7 @@ class NewMilestone extends React.Component {
         description,
         imageUrl,
         date,
+        devType,
       } = this.state;
 
       const newMilestone = {
@@ -52,10 +61,11 @@ class NewMilestone extends React.Component {
         description: description,
         imageUrl: imageUrl,
         date: date,
+        devType: devType,
         uid: authData.getUid()
       };
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('singleChildView'))
+      .then(() => this.props.history.push('/singleChildView'))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
@@ -65,11 +75,15 @@ class NewMilestone extends React.Component {
       imageUrl,
       date,
       children,
+      devTypes,
     } = this.state;
+
     const buildChildDropdown = () => children.map((child) => <option value={child.id}>{child.name}</option>);
+    const buildDevTypeDropdown = () => devTypes.map((devTypes) => <option value={devTypes.id}>{devTypes.name}</option>);
 
     return (
-      <div className="NewMilestone col-12">
+      <div className="NewMilestone col-6 offset-3">
+        <h2> Add a New Milestone! </h2>
         <form>
           <div class="form-group">
             <label for="milestone-title">Title </label>
@@ -109,11 +123,18 @@ class NewMilestone extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <label for="milestone-dropdown-child">Select Child</label>
+            <select class="form-control" id="milestone-dropdown-child">
               {buildChildDropdown()}
             </select>
           </div>
+          <div class="form-group">
+            <label for="milestone-dropdown-devType">Select Developmental Type</label>
+            <select class="form-control" id="milestone-dropdown-devType"> 
+              {buildDevTypeDropdown()}
+            </select>
+          </div>
+         
           <button type="submit" class="btn btn-primary" onClick={this.saveMilestone}>Submit Milestone</button>
         </form>
       </div>
@@ -122,3 +143,25 @@ class NewMilestone extends React.Component {
   }
 
 export default NewMilestone;
+
+// {/* <div className="form-group">
+//             <label htmlFor="gear-function">Function</label>
+//             <select
+//               className="form-control"
+//               id="gear-function"
+//               value={gearFunction}
+//               onChange={this.changeGearFunction}
+//             >
+//               {/* NEED to get the list of function values from Firebase to display here! */}
+// //               { buildFunctionsList() }
+// //             </select>
+// //           </div>
+
+// // const buildFunctionsList = () => functionsList.map((functionValue) => (
+// //   <option key={functionValue.id} value={functionValue.id}>{functionValue.name}</option>
+// // ));
+
+// // changeGearFunction = (e) => {
+// //   e.preventDefault();
+// //   this.setState({ gearFunction: e.target.value }); */}
+// // }
