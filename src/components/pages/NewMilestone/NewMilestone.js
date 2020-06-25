@@ -34,10 +34,11 @@ class NewMilestone extends React.Component {
       e.preventDefault();
       this.setState({ date: e.target.value });
     }
-  // developmentChange =(e) => {
-  //   e.preventDefault();
-  //   this.setState({ selectedOption: e.target.value});
-  // }
+  childrenChange = (e) => {
+      e.preventDefault();
+      this.setState({ children: e.target.value });
+    }
+
   componentDidMount() {
       const uid  = authData.getUid();
       childData.getChildrenbyUid(uid)
@@ -54,6 +55,7 @@ class NewMilestone extends React.Component {
         imageUrl,
         date,
         devType,
+        children,
       } = this.state;
 
       const newMilestone = {
@@ -61,6 +63,7 @@ class NewMilestone extends React.Component {
         description: description,
         imageUrl: imageUrl,
         date: date,
+        child: children,
         devType: devType,
         uid: authData.getUid()
       };
@@ -78,8 +81,8 @@ class NewMilestone extends React.Component {
       devTypes,
     } = this.state;
 
-    const buildChildDropdown = () => children.map((child) => <option value={child.id}>{child.name}</option>);
-    const buildDevTypeDropdown = () => devTypes.map((devTypes) => <option value={devTypes.id}>{devTypes.name}</option>);
+    const buildChildDropdown = () => children.map((child) => <option key={child.id} value={child.id}>{child.name}</option>);
+    const buildDevTypeDropdown = () => devTypes.map((devTypes) => <option key={devTypes.id} value={devTypes.id}>{devTypes.name}</option>);
 
     return (
       <div className="NewMilestone col-6 offset-3">
@@ -124,13 +127,21 @@ class NewMilestone extends React.Component {
 
           <div class="form-group">
             <label for="milestone-dropdown-child">Select Child</label>
-            <select class="form-control" id="milestone-dropdown-child">
+            <select 
+            class="form-control" 
+            id="milestone-dropdown-child"
+            value={children}
+            onChange={this.childrenChange}>
               {buildChildDropdown()}
             </select>
           </div>
           <div class="form-group">
             <label for="milestone-dropdown-devType">Select Developmental Type</label>
-            <select class="form-control" id="milestone-dropdown-devType"> 
+            <select 
+            class="form-control" 
+            id="milestone-dropdown-devType"
+            value={devTypes}
+            onChange={this.devTypeChange}> 
               {buildDevTypeDropdown()}
             </select>
           </div>
@@ -139,29 +150,6 @@ class NewMilestone extends React.Component {
         </form>
       </div>
     );
-    }
   }
-
+}
 export default NewMilestone;
-
-// {/* <div className="form-group">
-//             <label htmlFor="gear-function">Function</label>
-//             <select
-//               className="form-control"
-//               id="gear-function"
-//               value={gearFunction}
-//               onChange={this.changeGearFunction}
-//             >
-//               {/* NEED to get the list of function values from Firebase to display here! */}
-// //               { buildFunctionsList() }
-// //             </select>
-// //           </div>
-
-// // const buildFunctionsList = () => functionsList.map((functionValue) => (
-// //   <option key={functionValue.id} value={functionValue.id}>{functionValue.name}</option>
-// // ));
-
-// // changeGearFunction = (e) => {
-// //   e.preventDefault();
-// //   this.setState({ gearFunction: e.target.value }); */}
-// // }
