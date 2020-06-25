@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import milestoneShape from '../../../helpers/propz/milestoneShape';
 import './MilestoneCard.scss';
@@ -6,11 +7,11 @@ import './MilestoneCard.scss';
 class MilestoneCard extends React.Component {
   static propTypes = {
     milestone: milestoneShape.milestoneShape,
+    removeMilestone: PropTypes.func.isRequired,
   }
   render() {
-    const { milestone } = this.props;
-
-    const editMilestoneLink = `/milestone/edit/12345`;
+    const { milestone, removeMilestone } = this.props;
+    const editMilestoneLink = `/milestone/edit/${milestone.id}`;
 
     return (
       <div className="MilestoneCard col-4">
@@ -21,7 +22,8 @@ class MilestoneCard extends React.Component {
             <p className="card-text">{milestone.date}</p>
             <p className="card-text">{milestone.description}</p>
             <p className="card-text">{milestone.typeId}</p>
-            <Link className="btn btn-dark" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
+            <Link className="btn btn-warning mr-1" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
+            <button className="btn btn-danger" onClick={() => removeMilestone(milestone.id)}> <i className="fas fa-trash"></i>  </button>
           </div>
        </div>  
       </div>
