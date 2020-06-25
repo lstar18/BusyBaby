@@ -65,7 +65,7 @@ class NewMilestone extends React.Component {
         uid: authData.getUid()
       };
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('singleChildView'))
+      .then(() => this.props.history.push('/singleChildView'))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
@@ -143,3 +143,25 @@ class NewMilestone extends React.Component {
   }
 
 export default NewMilestone;
+
+// {/* <div className="form-group">
+//             <label htmlFor="gear-function">Function</label>
+//             <select
+//               className="form-control"
+//               id="gear-function"
+//               value={gearFunction}
+//               onChange={this.changeGearFunction}
+//             >
+//               {/* NEED to get the list of function values from Firebase to display here! */}
+// //               { buildFunctionsList() }
+// //             </select>
+// //           </div>
+
+// // const buildFunctionsList = () => functionsList.map((functionValue) => (
+// //   <option key={functionValue.id} value={functionValue.id}>{functionValue.name}</option>
+// // ));
+
+// // changeGearFunction = (e) => {
+// //   e.preventDefault();
+// //   this.setState({ gearFunction: e.target.value }); */}
+// // }
