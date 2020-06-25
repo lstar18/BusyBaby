@@ -7,7 +7,15 @@ class SingleChildView extends React.Component {
   state = {
     milestones: [],
   }
-  
+  componentDidMount() {
+    this.getMilestones();
+  }
+
+  removeMilestone = (milestoneId) => {
+    milestoneData.removeMilestone(milestoneId)
+    .then(() => this.getMilestones())
+    .catch((err) => console.error('cannot remove milestone', err));
+  }
   getMilestones = () => {
     const { childId } = this.props.match.params;
     milestoneData.getMilestonesbyChildId(childId)
@@ -15,15 +23,12 @@ class SingleChildView extends React.Component {
     .catch((err) => console.error('cannot get milestones', err));
   }
 
-  componentDidMount() {
-    this.getMilestones();
-  }
-
+ 
 
   render() {
     const { milestones } = this.state;
     const buildMilestoneCards = milestones.map((milestone) => (
-      <MilestoneCard key={milestone.id} milestone={milestone} />
+      <MilestoneCard key={milestone.id} milestone={milestone} removeMilestone={this.removeMilestone}/>
     ));
     return (
       <div className="SingleChildView">
