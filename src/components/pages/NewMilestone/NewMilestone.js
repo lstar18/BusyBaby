@@ -12,7 +12,7 @@ class NewMilestone extends React.Component {
       imageUrl: '',
       date: '',
       children: [],
-      devType: [],
+      getDevTypes: [],
     }
 
   titleChange = (e) => {
@@ -34,13 +34,18 @@ class NewMilestone extends React.Component {
       e.preventDefault();
       this.setState({ date: e.target.value });
     }
+  // developmentChange =(e) => {
+  //   e.preventDefault();
+  //   this.setState({ selectedOption: e.target.value});
+  // }
   componentDidMount() {
       const uid  = authData.getUid();
       childData.getChildrenbyUid(uid)
       .then((children) => this.setState({ children }))
+      .catch((err) => console.error('cannot get chidlren', err));
       devTypeData.getDevTypes()
       .then((devTypes) => this.setState({ devTypes }))
-      .catch((err) => console.error('cannot get chidlren', err));
+      .catch((err) => console.error('cannot get devType', err));
     }
   saveMilestone  = (e) => {
     const {  
@@ -48,6 +53,7 @@ class NewMilestone extends React.Component {
         description,
         imageUrl,
         date,
+        devType,
       } = this.state;
 
       const newMilestone = {
@@ -55,6 +61,7 @@ class NewMilestone extends React.Component {
         description: description,
         imageUrl: imageUrl,
         date: date,
+        devType: devType,
         uid: authData.getUid()
       };
       milestoneData.postMilestone(newMilestone)
@@ -68,11 +75,11 @@ class NewMilestone extends React.Component {
       imageUrl,
       date,
       children,
-      devType,
+      devTypes,
     } = this.state;
 
     const buildChildDropdown = () => children.map((child) => <option value={child.id}>{child.name}</option>);
-    const buildDevTypeDropdown = () => devType.map((devType) => <option value={devType.id}>{devType.name}</option>);
+    const buildDevTypeDropdown = () => devTypes.map((devTypes) => <option value={devTypes.id}>{devTypes.name}</option>);
 
     return (
       <div className="NewMilestone col-6 offset-3">
@@ -123,7 +130,7 @@ class NewMilestone extends React.Component {
           </div>
           <div class="form-group">
             <label for="milestone-dropdown-devType">Select Developmental Type</label>
-            <select class="form-control" id="milestone-dropdown-devType">
+            <select class="form-control" id="milestone-dropdown-devType"> 
               {buildDevTypeDropdown()}
             </select>
           </div>
