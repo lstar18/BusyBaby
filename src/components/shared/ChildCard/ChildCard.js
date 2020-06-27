@@ -17,8 +17,8 @@ class ChildCard extends React.Component {
                 
 
     return (
-        <div className="ChildCard col-6">
-          <div className="card">
+        <div className="ChildCard col-6 offset-3">
+          <div className="card mb-2 mt-2">
             <div className="card-body">
               <h3 className="card-title">{child.name}</h3>
               <p className="card-text">{child.birthday}</p>
