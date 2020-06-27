@@ -56,7 +56,7 @@ class NewMilestone extends React.Component {
       .then((devTypes) => this.setState({ devTypes }))
       .catch((err) => console.error('cannot get devType', err));
     }
-  saveMilestone  = (e) => {
+  saveMilestone = (e) => {
     const {  
         title,
         description,
@@ -75,8 +75,10 @@ class NewMilestone extends React.Component {
         childId: selectedChildChange,
         uid: authData.getUid()
       };
+      // const newPath = `/child/${selectedChildChange}`;
+      // console.log('new path', newPath)
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('/singleChildView'))
+      .then(() => this.props.history.push('/home'))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
