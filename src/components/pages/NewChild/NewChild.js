@@ -44,10 +44,10 @@ class NewChild extends React.Component {
 
     return (
       <div className="NewChild col-6 offset-3">
-         <h2> Add a New Child! </h2>
+         <h2> Add a New Child: </h2>
         <form>
           <div class="form-group">
-            <label for="child-name"> Name </label>
+            <label forHtml="child-name"> Name: </label>
             <input 
             type="text" 
             class="form-control" 
@@ -56,7 +56,7 @@ class NewChild extends React.Component {
             onChange={this.nameChange}/>
           </div>
           <div class="form-group">
-            <label for="child-birthday">Birthday </label>
+            <label forHtml="child-birthday">Birthday: </label>
             <input 
             type="text" 
             class="form-control" 
@@ -64,7 +64,7 @@ class NewChild extends React.Component {
             value={childBirthday}
             onChange={this.birthdayChange}/>
           </div>
-          <button type="submit" class="btn btn-primary" onClick={this.saveChild}>Add Child</button>
+          <button type="submit" class="add-child-button btn btn-dark btn-lg" onClick={this.saveChild}> Add <i className="fas fa-baby"></i></button>
         </form>
       </div>
     );

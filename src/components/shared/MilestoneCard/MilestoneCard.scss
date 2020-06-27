@@ -1,3 +1,43 @@
+@import '../../../styles/variables.scss';
+
+
 .MilestoneCard {
-  display: block;
+  .card-img {
+    max-width: 450px;
+    max-height: 400px;  
+  }
+  .edit-milestone-button{
+    opacity: 0.75;
+  }
+  .delete-milestone-button{
+    opacity: 0.75;
+  }
+  .card {
+   color: rgba(0, 0, 0, 0.644);
+   max-width: 95%;
+   max-height: 100%;
+   background-color: rgba(128, 128, 128, 0.404);
+   background-color: $CardColor;
+   border: $borderColor 6px solid;
+   border-radius: 10px;
+   .card-text-desc {
+     font-size: 30px;
+     font-family: $bellota
+   }
+   .card-text-dev {
+     font-size: 25px;
+     font-family: $bellota
+   }
+   .card-text-date {
+    font-size: 25px;
+    font-family: $bellota
+  }
+  .card-title {
+    font-size: 35px;
+    font-family: $bellota
+  }
+  }
+  .card:hover{
+    background-color: $hoverCardColor;
+  }
 }

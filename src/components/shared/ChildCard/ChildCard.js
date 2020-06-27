@@ -17,13 +17,13 @@ class ChildCard extends React.Component {
                 
 
     return (
-        <div className="ChildCard col-6">
-          <div className="card">
+        <div className="ChildCard col-4">
+          <div className="card mb-2 mt-2">
             <div className="card-body">
               <h3 className="card-title">{child.name}</h3>
               <p className="card-text">{child.birthday}</p>
-              <Link className="btn btn-dark" to={editChildLink}> <i className="fas fa-pencil-alt"></i> </Link>
-              <Link className="btn btn-dark" to={singleChildLink}> <i className="fas fa-eye"></i> </Link>
+              <Link className="edit-child-button btn btn-dark mr-1" to={editChildLink}> <i className="fas fa-pencil-alt"></i> </Link>
+              <Link className="view-child-button btn btn-dark ml-1" to={singleChildLink}> <i className="fas fa-eye"></i> </Link>
             </div>
          </div>  
         </div>

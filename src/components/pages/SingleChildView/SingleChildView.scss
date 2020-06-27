@@ -1,3 +1,10 @@
+@import '../../../styles/variables.scss';
+
 .SingleChildView {
-  display: block;
+  h1 {
+    font-family: $codystar-title;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.644)
+  }
 }
