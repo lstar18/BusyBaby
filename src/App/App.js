@@ -65,12 +65,12 @@ class App extends React.Component {
           <React.Fragment>
             <MyNavbar authed={authed}/>
               <Switch>
-                <PrivateRoute path='/home' component={Home} authed={authed}/>
                 <PrivateRoute path='/milestone/edit/:milestoneId' component={EditMilestone} authed={authed}/>
                 <PrivateRoute path='/child/edit/:childId' component={EditChild} authed={authed}/>
                 <PrivateRoute path='/milestone/new' component={NewMilestone} authed={authed}/>
                 <PrivateRoute path='/child/new' component={NewChild} authed={authed}/>
                 <PrivateRoute path='/child/:childId' component={SingleChildView} authed={authed}/>
+                <PrivateRoute path='/home' component={Home} authed={authed}/>
                 <PublicRoute path='/auth' component={Auth} authed={authed}/>
                 <Redirect from="*" to="/home"/>
               </Switch>
