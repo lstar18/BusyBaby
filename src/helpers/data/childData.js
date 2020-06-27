@@ -18,5 +18,7 @@ const getChildrenbyUid = (uid) => new Promise((resolve, reject) => {
   })
   .catch((err) => reject(err));
 })
-
-export default { getChildrenbyUid };
+const getSingleChild = (childId) => axios.get(`${baseUrl}/children/${childId}.json`);
+const postChild = (newChild) => axios.post(`${baseUrl}/children.json`, newChild);
+const putChild = (updatedChild, childId) => axios.put(`${baseUrl}/children/${childId}.json`, updatedChild);
+export default { getChildrenbyUid, postChild, getSingleChild, putChild };

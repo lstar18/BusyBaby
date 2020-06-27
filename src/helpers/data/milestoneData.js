@@ -20,4 +20,5 @@ const getMilestonesbyChildId = (childId) => new Promise((resolve, reject) => {
 })
 
 const postMilestone = (newMilestone) => axios.post(`${baseUrl}/milestones.json`, newMilestone);
-export default { getMilestonesbyChildId, postMilestone };
+const removeMilestone = (milestoneId) => axios.delete(`${baseUrl}/milestones/${milestoneId}.json`)
+export default { getMilestonesbyChildId, postMilestone, removeMilestone };

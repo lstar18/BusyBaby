@@ -46,6 +46,7 @@ class NewMilestone extends React.Component {
     console.log('e.target', e.target.value)
     this.setState({ selectedChildChange: e.target.value});
   }
+
   componentDidMount() {
       const uid  = authData.getUid();
       childData.getChildrenbyUid(uid)
@@ -75,7 +76,7 @@ class NewMilestone extends React.Component {
         uid: authData.getUid()
       };
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('singleChildView'))
+      .then(() => this.props.history.push('/singleChildView'))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
@@ -158,7 +159,6 @@ class NewMilestone extends React.Component {
         </form>
       </div>
     );
-    }
   }
-
+}
 export default NewMilestone;
