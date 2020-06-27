@@ -17,13 +17,13 @@ class MilestoneCard extends React.Component {
       <div className="MilestoneCard col-4">
         <div className="card">
           <div className="card-body">
-            <h3 className="card-title">{milestone.title}</h3>
+            <h2 className="card-title">{milestone.title}</h2>
             <img className="card-img" src={milestone.imageUrl} alt="child achieving the milestone" />
-            <p className="card-text">{milestone.date}</p>
-            <p className="card-text">{milestone.description}</p>
-            <p className="card-text">{milestone.typeId}</p>
-            <Link className="milestone-button btn btn-warning mr-1" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
-            <button className="btn btn-danger" onClick={() => removeMilestone(milestone.id)}> <i className="fas fa-trash"></i>  </button>
+            <p className="card-text-date">{milestone.date}</p>
+            <p className="card-text-desc">{milestone.description}</p>
+            <p className="card-text-dev">{milestone.typeId}</p>
+            <Link className="edit-milestone-button btn btn-dark mr-1" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
+            <button className="delete-milestone-button btn btn-danger" onClick={() => removeMilestone(milestone.id)}> <i className="fas fa-trash"></i>  </button>
           </div>
        </div>  
       </div>

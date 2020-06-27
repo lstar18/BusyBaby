@@ -1,6 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .ChildCard {
+ 
   .edit-child-button{
     opacity: 0.75;
   }
@@ -14,15 +15,22 @@
     opacity: 1;
   }
   .card{
-    background-color: $childCardColor;
-    border: $cardBorder 3px solid;
+    background-color: $CardColor;
+    border: $borderColor 6px solid;
     border-radius: 10px;
+    .card-title {
+      font-size: 40px;
+      font-family: $bellota
+    }
+    .card-text {
+      font-size: 25px;
+      font-family: $bellota
+    }
   }
   .card:hover{
-    background-color: $backgroundColor;
+    background-color:$hoverCardColor;
   }
-  .card-body {
-    border: #B0D0D3 3px solid;
-    border-radius: 10px;
+  .card-body{
+    color: rgba(0, 0, 0, 0.644);
   }
 }

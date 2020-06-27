@@ -1,3 +1,19 @@
+@import '../../../styles/variables.scss';
+
 .NewMilestone {
-  display: block;
+  h2 {
+    font-family: $codystar-title;
+    font-weight: 900;
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.644)
+  }
+  .form-group {
+    label {
+      font-size: 30px;
+      font-family: $bellota;
+    }
+  }
+  .save-milestone-button{
+    opacity: 0.75;
+  }
 }

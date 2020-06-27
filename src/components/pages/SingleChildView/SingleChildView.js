@@ -32,7 +32,7 @@ class SingleChildView extends React.Component {
     ));
     return (
       <div className="SingleChildView">
-        <h2> Milestones Tracker </h2>
+        <h1> Milestones Tracker </h1>
         <div className="d-flex flex-wrap">
           { buildMilestoneCards }
         </div>

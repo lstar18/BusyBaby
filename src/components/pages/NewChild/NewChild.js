@@ -64,7 +64,7 @@ class NewChild extends React.Component {
             value={childBirthday}
             onChange={this.birthdayChange}/>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" onClick={this.saveChild}> <i className="fas fa-baby"></i></button>
+          <button type="submit" class="add-child-button btn btn-dark btn-lg" onClick={this.saveChild}> Add <i className="fas fa-baby"></i></button>
         </form>
       </div>
     );

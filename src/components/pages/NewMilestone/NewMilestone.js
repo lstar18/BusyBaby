@@ -157,7 +157,7 @@ class NewMilestone extends React.Component {
             </select>
           </div>
          
-          <button type="submit" className="btn btn-primary" onClick={this.saveMilestone}>Submit Milestone</button>
+          <button type="submit" className="save-milestone-button btn btn-dark" onClick={this.saveMilestone}>Submit Milestone</button>
         </form>
       </div>
     );
