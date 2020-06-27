@@ -18,7 +18,8 @@ const getMilestonesbyChildId = (childId) => new Promise((resolve, reject) => {
   })
   .catch((err) => reject(err));
 })
-
+const getSingleMilestone = (milestoneId) => axios.get(`${baseUrl}/milestones/${milestoneId}.json`);
+const putMilestone = (updatedMilestone, milestoneId) => axios.put(`${baseUrl}/milestones/${milestoneId}.json`, updatedMilestone);
 const postMilestone = (newMilestone) => axios.post(`${baseUrl}/milestones.json`, newMilestone);
 const removeMilestone = (milestoneId) => axios.delete(`${baseUrl}/milestones/${milestoneId}.json`)
-export default { getMilestonesbyChildId, postMilestone, removeMilestone };
+export default { getMilestonesbyChildId, postMilestone, removeMilestone, putMilestone, getSingleMilestone };

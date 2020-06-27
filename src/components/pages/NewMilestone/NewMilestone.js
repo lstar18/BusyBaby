@@ -12,7 +12,9 @@ class NewMilestone extends React.Component {
       imageUrl: '',
       date: '',
       children: [],
-      getDevTypes: [],
+      devTypes: [],
+      selectedDevChange:'',
+      selectedChildChange: '',
     }
 
   titleChange = (e) => {
@@ -34,10 +36,16 @@ class NewMilestone extends React.Component {
       e.preventDefault();
       this.setState({ date: e.target.value });
     }
-  childrenChange = (e) => {
-      e.preventDefault();
-      this.setState({ children: e.target.value });
-    }
+  developmentChange =(e) => {
+    e.preventDefault();
+    console.log('e.target', e.target.value)
+    this.setState({ selectedDevChange: e.target.value});
+  }
+  childChange =(e) => {
+    e.preventDefault();
+    console.log('e.target', e.target.value)
+    this.setState({ selectedChildChange: e.target.value});
+  }
 
   componentDidMount() {
       const uid  = authData.getUid();
@@ -48,14 +56,14 @@ class NewMilestone extends React.Component {
       .then((devTypes) => this.setState({ devTypes }))
       .catch((err) => console.error('cannot get devType', err));
     }
-  saveMilestone  = (e) => {
+  saveMilestone = (e) => {
     const {  
         title,
         description,
         imageUrl,
         date,
-        devType,
-        children,
+        selectedDevChange,
+        selectedChildChange,
       } = this.state;
 
       const newMilestone = {
@@ -63,12 +71,14 @@ class NewMilestone extends React.Component {
         description: description,
         imageUrl: imageUrl,
         date: date,
-        child: children,
-        devType: devType,
+        typeId: selectedDevChange,
+        childId: selectedChildChange,
         uid: authData.getUid()
       };
+      // const newPath = `/child/${selectedChildChange}`;
+      // console.log('new path', newPath)
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('/singleChildView'))
+      .then(() => this.props.history.push('/home'))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
@@ -82,32 +92,32 @@ class NewMilestone extends React.Component {
     } = this.state;
 
     const buildChildDropdown = () => children.map((child) => <option key={child.id} value={child.id}>{child.name}</option>);
-    const buildDevTypeDropdown = () => devTypes.map((devTypes) => <option key={devTypes.id} value={devTypes.id}>{devTypes.name}</option>);
+    const buildDevTypeDropdown = () => devTypes.map((devType) => <option key={devType.id} value={devType.id}>{devType.name}</option>);
 
     return (
       <div className="NewMilestone col-6 offset-3">
         <h2> Add a New Milestone! </h2>
         <form>
-          <div class="form-group">
-            <label for="milestone-title">Title </label>
+          <div className="form-group">
+            <label forHtml="milestone-title">Title </label>
             <input 
             type="text" 
-            class="form-control" 
+            className="form-control" 
             id="milestone-title" 
             value={title}
             onChange={this.titleChange}/>
           </div>
-          <div class="form-group">
-            <label for="milestone-description">Description </label>
+          <div className="form-group">
+            <label forHtml="milestone-description">Description </label>
             <input 
             type="text" 
-            class="form-control" 
+            className="form-control" 
             id="milestone-description" 
             value={description}
             onChange={this.descriptionChange}/>
           </div>
-          <div class="form-group">
-            <label for="milestone-imageUrl"> Image Url </label>
+          <div className="form-group">
+            <label forHtml="milestone-imageUrl"> Image Url </label>
             <input 
             type="text" 
             class="form-control" 
@@ -115,38 +125,39 @@ class NewMilestone extends React.Component {
             value={imageUrl}
             onChange={this.imageUrlChange}/>
           </div>
-          <div class="form-group">
-            <label for="milestone-date"> Image Url </label>
+          <div className="form-group">
+            <label forHtml="milestone-date"> Date </label>
             <input 
             type="text" 
-            class="form-control" 
+            className="form-control" 
             id="milestone-date" 
             value={date}
             onChange={this.dateChange}/>
           </div>
 
-          <div class="form-group">
-            <label for="milestone-dropdown-child">Select Child</label>
+          <div className="form-group">
+            <label forHtml="milestone-dropdown-child">Select Child</label>
             <select 
-            class="form-control" 
+            className="form-control" 
             id="milestone-dropdown-child"
-            value={children}
-            onChange={this.childrenChange}>
+            value={this.state.selectedChildChange}
+            onChange={this.childChange}> 
+              <option value=''> Select a Child </option> 
               {buildChildDropdown()}
             </select>
           </div>
-          <div class="form-group">
-            <label for="milestone-dropdown-devType">Select Developmental Type</label>
-            <select 
-            class="form-control" 
+          <div className="form-group">
+            <label forHtml="milestone-dropdown-devType">Select Developmental Type</label>
+            <select className="form-control" 
             id="milestone-dropdown-devType"
-            value={devTypes}
-            onChange={this.devTypeChange}> 
+            value={this.state.selectedDevChange}
+            onChange={this.developmentChange}> 
+              <option value=''> Select a Development Type </option> 
               {buildDevTypeDropdown()}
             </select>
           </div>
          
-          <button type="submit" class="btn btn-primary" onClick={this.saveMilestone}>Submit Milestone</button>
+          <button type="submit" className="btn btn-primary" onClick={this.saveMilestone}>Submit Milestone</button>
         </form>
       </div>
     );
