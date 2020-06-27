@@ -1,3 +1,28 @@
+@import '../../../styles/variables.scss';
+
 .ChildCard {
-  display: block;
+  .edit-child-button{
+    opacity: 0.75;
+  }
+  .edit-child-button:hover{
+    opacity: 1;
+  }
+  .view-child-button{
+    opacity: 0.75;
+  }
+  .view-child-button:hover{
+    opacity: 1;
+  }
+  .card{
+    background-color: $childCardColor;
+    border: $cardBorder 3px solid;
+    border-radius: 10px;
+  }
+  .card:hover{
+    background-color: $backgroundColor;
+  }
+  .card-body {
+    border: #B0D0D3 3px solid;
+    border-radius: 10px;
+  }
 }

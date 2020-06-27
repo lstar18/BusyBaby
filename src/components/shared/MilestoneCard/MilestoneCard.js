@@ -22,7 +22,7 @@ class MilestoneCard extends React.Component {
             <p className="card-text">{milestone.date}</p>
             <p className="card-text">{milestone.description}</p>
             <p className="card-text">{milestone.typeId}</p>
-            <Link className="btn btn-warning mr-1" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
+            <Link className="milestone-button btn btn-warning mr-1" to={editMilestoneLink}> <i className="fas fa-pencil-alt"></i> </Link>
             <button className="btn btn-danger" onClick={() => removeMilestone(milestone.id)}> <i className="fas fa-trash"></i>  </button>
           </div>
        </div>  
