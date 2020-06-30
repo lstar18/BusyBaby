@@ -36,6 +36,9 @@
     font-size: 35px;
     font-family: $bellota
   }
+  .card-img {
+    border: $borderColor 6px solid;
+  }
   }
   .card:hover{
     background-color: $hoverCardColor;

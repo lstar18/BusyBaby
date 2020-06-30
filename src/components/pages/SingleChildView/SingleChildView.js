@@ -30,7 +30,7 @@ class SingleChildView extends React.Component {
   render() {
     const { milestones } = this.state;
     const buildMilestoneCards = milestones.map((milestone) => (
-      <MilestoneCard key={milestone.id} milestone={milestone} removeMilestone={this.removeMilestone}/>
+      <MilestoneCard key={milestone.id} milestone={milestone} removeMilestone={this.removeMilestone} />
     ));
     const homeLink = `/home`;
     return (
