@@ -6,6 +6,12 @@
     font-weight: 900;
     font-size: 50px;
   }
+  h2 {
+    color: rgba(0, 0, 0, 0.644);
+    font-family: $codystar-title;
+    font-weight: 600;
+    font-size: 50px;
+  }
 
   .home-pic {
     width: 500px;
@@ -23,10 +29,10 @@
     padding-top: 10px;
     color: rgba(0, 0, 0, 0.644);
     background-color: $CardColor;
-    border: $borderColor 2px solid;
+    border: $borderColor 5px solid;
     border-radius: 10px;
     font-size: 30px;
-    font-family: $mali;
+    font-family: $bellota;
     z-index: 9999;
   }
 

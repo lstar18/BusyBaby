@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './EditMilestone.scss';
 import milestoneData from '../../../helpers/data/milestoneData';
 import childData from '../../../helpers/data/childData';
@@ -27,8 +28,8 @@ class EditMilestone extends React.Component {
           description: milestone.description,
           imageUrl: milestone.imageUrl,
           date: milestone.date,
-          selectedChildChange: milestone.selectedChildChange,
-          selectedDevChange: milestone.selectedDevChange,
+          selectedChildChange: milestone.childId,
+          selectedDevChange: milestone.typeId,
         })
       })
       .catch((err) => console.error('cannot update milestone', err));
@@ -107,10 +108,11 @@ class EditMilestone extends React.Component {
 
     const buildChildDropdown = () => children.map((child) => <option key={child.id} value={child.id}>{child.name}</option>);
     const buildDevTypeDropdown = () => devTypes.map((devType) => <option key={devType.id} value={devType.id}>{devType.name}</option>);
-
+    const homeLink = `/home`;
     return (
       <div className="EditMilestone col-6 offset-3">
         <h2> Update Milestone! </h2>
+        <Link className="arrow btn btn-dark mb-2" to={homeLink}> <i class="fas fa-arrow-circle-left"></i> </Link>
         <form>
           <div className="form-group">
             <label forHtml="milestone-title">Title </label>
