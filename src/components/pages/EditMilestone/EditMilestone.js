@@ -60,12 +60,10 @@ class EditMilestone extends React.Component {
     }
   developmentChange =(e) => {
     e.preventDefault();
-    console.log('e.target', e.target.value)
     this.setState({ selectedDevChange: e.target.value});
   }
   childChange =(e) => {
     e.preventDefault();
-    console.log('e.target', e.target.value)
     this.setState({ selectedChildChange: e.target.value});
   }
 

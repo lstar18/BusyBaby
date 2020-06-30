@@ -57,6 +57,7 @@ class NewMilestone extends React.Component {
       .catch((err) => console.error('cannot get devType', err));
     }
   saveMilestone = (e) => {
+    e.preventDefault();
     const {  
         title,
         description,
