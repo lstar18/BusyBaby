@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './EditChild.scss';
 import childData from '../../../helpers/data/childData';
 import authData from '../../../helpers/data/authData';
@@ -53,10 +54,11 @@ class EditChild extends React.Component {
       name,
       birthday,
     } = this.state;
-
+    const homeLink = `/home`;
     return (
       <div className="NewChild col-6 offset-3">
          <h2> Update Child Information! </h2>
+         <Link className="arrow btn btn-dark mb-2" to={homeLink}> <i class="fas fa-arrow-circle-left"></i> </Link>
         <form>
           <div class="form-group">
             <label for="child-name"> Name </label>

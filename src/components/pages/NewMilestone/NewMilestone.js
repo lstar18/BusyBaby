@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './NewMilestone.scss';
 import milestoneData from '../../../helpers/data/milestoneData';
 import childData from '../../../helpers/data/childData';
@@ -94,10 +95,11 @@ class NewMilestone extends React.Component {
 
     const buildChildDropdown = () => children.map((child) => <option key={child.id} value={child.id}>{child.name}</option>);
     const buildDevTypeDropdown = () => devTypes.map((devType) => <option key={devType.id} value={devType.id}>{devType.name}</option>);
-
+    const homeLink = `/home`;
     return (
       <div className="NewMilestone col-6 offset-3">
         <h2> Add a New Milestone! </h2>
+        <Link className="arrow btn btn-dark mb-2" to={homeLink}> <i class="fas fa-arrow-circle-left"></i> </Link>
         <form>
           <div className="form-group">
             <label forHtml="milestone-title">Title </label>
