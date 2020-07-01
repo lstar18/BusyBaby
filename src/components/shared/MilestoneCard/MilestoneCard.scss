@@ -5,6 +5,7 @@
   .card-img {
     max-width: 450px;
     max-height: 400px;  
+    border: $borderColor 6px solid;
   }
   .edit-milestone-button{
     opacity: 0.75;

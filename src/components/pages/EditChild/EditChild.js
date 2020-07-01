@@ -78,7 +78,7 @@ class EditChild extends React.Component {
             value={birthday}
             onChange={this.birthdayChange}/>
           </div>
-          <button type="submit" class="btn btn-primary" onClick={this.updateChild}>Update Child</button>
+          <button type="submit" class="edit-child-button btn btn-dark" onClick={this.updateChild}>Update Child</button>
         </form>
       </div>
     );
