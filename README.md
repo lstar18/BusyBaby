@@ -1,68 +1,29 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
+This project is an application to provide a space for parents to “store” their children's milestones such as the first bath, first smile, first time sitting up, first time eating solid foods, etc.  When a parent logs in to the app, they will see their child(ren) on the home page.  From the homepage, they will be able to click on a button to see a single page view of that specific child's milestones.  They can also edit the information they entered about their child from the home page.  There are separate pages to add a child and add a milestone.  When they add another child, the child will be appear on their home page.  When they add a milestone, it will get added to the child's single view page.  For the milestone, they will be able to enter the title of the milestone, a description of what the milestone is, a picture of the children achieving the milestone, date the child achieved the milestone, and the type of milestone (such as a gross motor, social, cognitive, and communcation). They will also be able to edit the milestone or delete the milestone if they choose to do so.
 
-In the project directory, you can run:
 
-### `npm start`
+## Screenshots
+This is the main page of the application:
+![This is a screenshot of the main page of project](src/screenshots/Home_ss.png)
+This is another view of the main page:
+![This is a another screenshot of the main page](src/screenshots/Home_2_ss.png)
+This is the add child page:
+![This is a screenshot of a featured board in the project](src/screenshots/Add_Child.png)
+This is the new milestone page:
+![This is a screenshot of a featured board in the project](src/screenshots/Add_Milestone.png)
+This is the edit child page:
+![This is a screenshot of a featured board in the project](src/screenshots/Update_Child.png)
+This is the edit milestone page:
+![This is a screenshot of a featured board in the project](src/screenshots/Update_Milestone.png)
+This is the single child view of milestones page:
+![This is a screenshot of a featured board in the project](src/screenshots/Child_Milestone.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## How To Run
+1. Clone down this repo
+1. Make sure you have  http-serve installed via npm. If not, get it [HERE](https://npmjs.com/package/http-server).
+1. On your command line run `hs -p 9999`
+1. In your browser go to `http://localhost:9999`
+1. Or click on this link:
+ https://busybaby-c7434.web.app

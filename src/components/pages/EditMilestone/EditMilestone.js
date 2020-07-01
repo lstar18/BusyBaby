@@ -173,7 +173,7 @@ class EditMilestone extends React.Component {
             </select>
           </div>
          
-          <button type="submit" className="btn btn-primary" onClick={this.updateMilestone}>Update Milestone</button>
+          <button type="submit" className="update-button btn btn-dark" onClick={this.updateMilestone}>Update Milestone</button>
         </form>
       </div>
     );
