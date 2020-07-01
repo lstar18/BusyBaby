@@ -150,12 +150,12 @@ class NewMilestone extends React.Component {
             </select>
           </div>
           <div className="form-group">
-            <label forHtml="milestone-dropdown-devType">Select Developmental Type</label>
+            <label forHtml="milestone-dropdown-devType">Select Milestone Type</label>
             <select className="form-control" 
             id="milestone-dropdown-devType"
             value={this.state.selectedDevChange}
             onChange={this.developmentChange}> 
-              <option value=''> Select a Development Type </option> 
+              <option value=''> Select a Milestone Type </option> 
               {buildDevTypeDropdown()}
             </select>
           </div>

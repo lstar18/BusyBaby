@@ -10,5 +10,14 @@
   },
   "devType4": {
     "name": "Social"
+  },
+  "devType5": {
+    "name": "Life Cycle Event"
+  },
+  "devType6": {
+    "name": "Educational"
+  },
+  "devType7": {
+    "name": "Other"
   }
 }
