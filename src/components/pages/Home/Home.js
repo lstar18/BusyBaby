@@ -29,10 +29,10 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1> Our BusyBaby Tracker </h1>
-        <img className="home-pic" src="https://i.imgur.com/CxsmvyA.jpg?2" alt="two babies with their heads together" />
         <div className="intro-text">
-          <p> Welcome to BusyBaby Tracker!  BusyBaby was created for the parents who wants to keep track of their child's milestones, but doesn't want to spend time putting in a baby book that will eventually just sit on a shelf.  BusyBaby allows you have access to this information in the moment, at the doctor, and ten years down the road when you take a trip down memory lane!  There are so many major milestones children reach, and it is also fun to track the small ones that are just special to you and your family.  BusyBaby allows you to create your own milestone, whether big or small! All you need to do is add a child to your profile and track away! </p>
+          <p>Welcome to BusyBaby Tracker!  BusyBaby is created for parents who want to keep track of their child's milestones, but don't want to spend time putting together a baby book that will eventually sit on a shelf.  BusyBaby allows you to have access to this information in the moment, at the doctor's office, and ten years down the road when you take a trip down memory lane!  There are so many major milestones children reach, and it is also fun to track the small ones that are just special to you and your family.  BusyBaby allows you to create and track your own milestones, whether big or small! All you need to do is click the add a child link in the navigation bar and track away!</p>
         </div>
+        <img className="home-pic mb-5" src="https://i.imgur.com/CxsmvyA.jpg?2" alt="two babies with their heads together" />
         <h2> Our Child(ren) </h2>
         <div className="d-flex flex-wrap">
           { buildChildrenCards }
