@@ -18,7 +18,7 @@ This is the edit child page:
 This is the edit milestone page:
 ![This is a screenshot of a featured board in the project](src/screenshots/Update_Milestone.png)
 This is the single child view of milestones page:
-![This is a screenshot of a featured board in the project](src/screenshots/Child_Milestone.png)
+![This is a screenshot of a featured board in the project](src/screenshots/Child_Milestones.png)
 
 ## How To Run
 1. Clone down this repo
