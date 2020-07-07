@@ -25,20 +25,27 @@ class SingleChildView extends React.Component {
     .catch((err) => console.error('cannot get milestones', err));
   }
 
- 
-
-  render() {
+   render() {
     const { milestones } = this.state;
     const buildMilestoneCards = milestones.map((milestone) => (
       <MilestoneCard key={milestone.id} milestone={milestone} removeMilestone={this.removeMilestone} />
+    ));
+     const buildMilestoneListCards = milestones.map((milestone) => (
+      <MilestoneListCard key={milestone.id} milestone={milestone} removeMilestone={this.removeMilestone} />
     ));
     const homeLink = `/home`;
     return (
       <div className="SingleChildView">
         <h1> Milestones Tracker </h1>
+        <button type="button" class="toggle-button btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off">
+          List View
+        </button>
         <Link className="arrow btn btn-dark mb-2" to={homeLink}> <i class="fas fa-arrow-circle-left"></i> </Link>
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap m-2">
           { buildMilestoneCards }
+        </div>
+        <div className="d-flex flex-wrap">
+          { buildMilestoneListCards }
         </div>
       </div>
     );
