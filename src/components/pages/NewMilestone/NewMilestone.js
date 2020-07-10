@@ -80,7 +80,7 @@ class NewMilestone extends React.Component {
       // const newPath = `/child/${selectedChildChange}`;
       // console.log('new path', newPath)
       milestoneData.postMilestone(newMilestone)
-      .then(() => this.props.history.push('/home'))
+      .then(() => this.props.history.push(`/child/${selectedChildChange}`))
       .catch((err) => console.error('cannot save new milestone', err))
     }
   render() {
