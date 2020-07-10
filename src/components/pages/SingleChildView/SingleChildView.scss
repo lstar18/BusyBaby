@@ -7,4 +7,29 @@
     font-size: 50px;
     color: rgba(0, 0, 0, 0.644)
   }
+  .toggle-button{
+    opacity: 0.75;
+    margin-right: 5px;
+  }
+  .MilestoneListCard{
+    background-color: white;
+    border: 1px rgba(0, 0, 0, 0.75) solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .list-group{
+    list-style: none;
+  }
+  .list-group-title{
+    font-size: 30px;
+    font-family: $delius
+  }
+  .list-group-date{
+    font-size: 30px;
+    font-family: $delius
+  }
+  .list-group-item{
+    font-size: 30px;
+    font-family: $delius
+  }
 }
