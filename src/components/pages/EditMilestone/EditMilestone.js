@@ -90,10 +90,8 @@ class EditMilestone extends React.Component {
         childId: selectedChildChange,
         uid: authData.getUid()
       };
-      // const newPath = `/child/${selectedChildChange}`;
-      // console.log('new path', newPath)
       milestoneData.putMilestone(updatedMilestone, milestoneId)
-      .then(() => this.props.history.push(`/milestone/edit/${milestoneId}`))
+      .then(() => this.props.history.push(`/child/${selectedChildChange}`))
       .catch((err) => console.error('cannot update new milestone', err))
     }
   render() {
